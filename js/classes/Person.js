@@ -30,4 +30,13 @@ class Person{
             }
         }
     }
+
+    AddHealth(points){
+        if(this.Health + points > 100){
+            this.Health = 100;
+        }
+        else{
+            this.Health += points;
+        }
+    }
 }
