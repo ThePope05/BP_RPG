@@ -12,4 +12,6 @@ class Person{
         this.Armor = armor;
         this.Level = level;
     }
+
+    
 }
