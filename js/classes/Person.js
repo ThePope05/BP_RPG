@@ -13,5 +13,21 @@ class Person{
         this.Level = level;
     }
 
-    
+    TakeDamage(damage){
+        let ans = [];
+        for(let i = 0; i < damage; i++){
+            if(this.Armor <= 0){
+                ans["Armor"] = "Depleted";
+                if(this.Health < 0){
+                    ans["Health"] = "Depleted";
+                }
+                else{
+                    this.Health -= 1;
+                }
+            }
+            else{
+                this.Armor -= 1;
+            }
+        }
+    }
 }
