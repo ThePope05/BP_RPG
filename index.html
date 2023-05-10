@@ -11,36 +11,58 @@
     <title>RPGame</title>
 </head>
 <body>
-    <div id="left">
+    <div id="left" class="side">
         <div class="card" id="Player">
-            <h1 class="title">Player lvl1</h1>
-            <p class="health">Health: 100</p>
-            <p class="armor">Armor: 100</p>
-            <p class="stamina">Stamina: 100</p>
+            <h1 class="title">Player lvl-X</h1>
+            <div class="sliderBody">
+                <p>Health</p>
+                <div class="sliderValue" id="health"></div>
+            </div>
+            <div class="sliderBody">
+                <p>Armor</p>
+                <div class="sliderValue" id="armor"></div>
+            </div>
+            <div class="sliderBody">
+                <p>Stamina</p>
+                <div class="sliderValue" id="stamina"></div>
+            </div>
             <img class="body" src="assets/images/PersonPlaceholder.png">
         </div>
     </div>
-    <div id="right">
+    <div id="right" class="side">
         <div class="card" id="Enemy">
-            <h1 class="title">Enemy lvl1</h1>
-            <p class="health">Health: 100</p>
-            <p class="armor">Armor: 100</p>
-            <p class="stamina">Stamina: 100</p>
+            <h1 class="title">Enemy lvl-X</h1>
+            <div class="sliderBody">
+                <p>Health</p>
+                <div class="sliderValue" id="health"></div>
+            </div>
+            <div class="sliderBody">
+                <p>Armor</p>
+                <div class="sliderValue" id="armor"></div>
+            </div>
+            <div class="sliderBody">
+                <p>Stamina</p>
+                <div class="sliderValue" id="stamina"></div>
+            </div>
             <img class="body" src="assets/images/PersonPlaceholder.png">
         </div>
     </div>
     <div id="bottom">
-        <div id="attack-buttons">
-            <button onclick="CurEnemy.TakeDamage(MyPlayer.CalculateDamage('Light')); ChangeMove()">Light</button>
-            <button onclick="CurEnemy.TakeDamage(MyPlayer.CalculateDamage('Middle')); ChangeMove()">Middle</button>
-            <button onclick="CurEnemy.TakeDamage(MyPlayer.CalculateDamage('Heavy')); ChangeMove()">Heavy</button>
+        <div id="all-buttons">
+            <div id="attack-buttons">
+                <button onclick="CurEnemy.TakeDamage(MyPlayer.CalculateDamage('Light')); ChangeMove()">Light</button>
+                <button onclick="CurEnemy.TakeDamage(MyPlayer.CalculateDamage('Middle')); ChangeMove()">Middle</button>
+                <button onclick="CurEnemy.TakeDamage(MyPlayer.CalculateDamage('Heavy')); ChangeMove()">Heavy</button>
+            </div>
+            <button>Heal</button>
+            <button>Rest</button>
         </div>
-        <button></button>
-        <button></button>
     </div>
 
     <script src="js/classes/Names.js"></script>
     <script src="js/classes/Person.js"></script>
+    <script src="js/classes/Enemy.js"></script>
+    <script src="js/GeneralManager.js"></script>
     <script src="js/GameManager.js"></script>
     <script src="js/RoundManager.js"></script>
 </body>
