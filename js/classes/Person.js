@@ -13,9 +13,9 @@ class Person{
         this.Level = level;
     }
 
-    TakeDamage(damage){
+    TakeDamage(points){
         let ans = [];
-        for(let i = 0; i < damage; i++){
+        for(let i = 0; i < points; i++){
             if(this.Armor <= 0){
                 ans["Armor"] = "Depleted";
                 if(this.Health < 0){
@@ -28,6 +28,15 @@ class Person{
             else{
                 this.Armor -= 1;
             }
+        }
+    }
+
+    TakeStamina(points){
+        if(this.Stamina + points > 100){
+            this.Stamina = 100;
+        }
+        else{
+            this.Stamina += points;
         }
     }
 
