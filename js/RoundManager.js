@@ -1,26 +1,18 @@
-const ActionButtons = document.querySelectorAll("#bottom button");
-
 let currentRound = 0;
-let PlayerMove = true;
+let PlayerMove = false;
 
-//Player does attack
-//Move -> Enemy
-//Enemy does heal
-//Move -> Player
-//Player does attack
-//Enemy dies - Player wins
-//Round + 1
+ChangeMove();
 
-function ChangeMove(){
+async function ChangeMove(){
     UpdateText();
     if(!PlayerMove){
-        ActionButtons.forEach((curBut) => {
-            curBut.disabled = true;
-        });
+        PlayerMove = true;
+        DisableButtons(false);
     }
     else{
-        ActionButtons.forEach((curBut) => {
-            curBut.disabled = false;
-        });
+        PlayerMove = false;
+        DisableButtons(true);
+        await CurEnemy.DoMove();
+        ChangeMove();
     }
 }

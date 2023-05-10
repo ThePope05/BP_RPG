@@ -1,3 +1,5 @@
+
+
 class Person{
     Name;
     Health;
@@ -55,16 +57,13 @@ class Person{
 
     CalculateDamage(attackType){
         if(attackType == "Light"){
-            this.ChangeStamina(0 - (this.Level * 2));
-            return (this.Level * 1.5);
+            return Math.floor(this.Level * 3);
         }
         else if(attackType == "Middle"){
-            this.ChangeStamina(0 - (this.Level * 5));
-            return (this.Level * 2.5);
+            return Math.floor(this.Level * 6);
         }
         else if(attackType == "Heavy"){
-            this.ChangeStamina(0 - (this.Level * 10));
-            return (this.Level * 5);
+            return Math.floor(this.Level * 10);
         }
     }
 }
