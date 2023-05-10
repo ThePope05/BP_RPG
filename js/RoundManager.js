@@ -4,7 +4,6 @@ let PlayerMove = false;
 ChangeMove();
 
 async function ChangeMove(){
-    UpdateText();
     if(!PlayerMove){
         PlayerMove = true;
         DisableButtons(false);
@@ -15,4 +14,5 @@ async function ChangeMove(){
         await CurEnemy.DoMove();
         ChangeMove();
     }
+    UpdateText();
 }

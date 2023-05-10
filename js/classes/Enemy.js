@@ -9,9 +9,9 @@ class Enemy extends Person{
     async DoMove(){
         await sleep(3000);
         if(this.Health <= (this.Health / 2)){
-            this.AddHealth(this.Health / 2);
+            this.ChangeHealth(this.Health / 2);
         }else{
-            MyPlayer.TakeDamage(this.CalculateDamage("Middle"));
+            MyPlayer.ChangeHealth(this.CalculateDamage("Middle"));
         }
     }
 }
