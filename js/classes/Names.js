@@ -80,3 +80,7 @@ let allNames = [
     "Gentar",
     "Feston"
 ];//80 names
+
+function GetRandomName(){
+    return allNames[Math.floor(Math.random() * 80)];
+}
