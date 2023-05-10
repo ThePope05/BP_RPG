@@ -3,6 +3,117 @@ html{
     font-family: 'Inconsolata', monospace;
 }
 
-*{
-    box-sizing: border-box;
+body{
+    * {
+        box-sizing: border-box;
+    }
+    background-color: rgb(109, 103, 86);
+    display: flex;
+    overflow: hidden;
+    width: 100vw;
+    height: 90vh;
+    > .side{
+        display: flex;
+        width: 50vw;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        > .card{
+            display: flex;
+            flex-direction: column;
+            background-color: #e9ddae;
+            border-style: solid;
+            border-color: #545140;
+            border-width: .5rem;
+            border-radius: 1rem;
+            padding: 1rem;
+            text-align: center;
+            > .title{
+                font-weight: 800;
+                width: 100%;
+            }
+            > .sliderBody{
+                margin: .3rem auto;
+                display: flex;
+                justify-content: center;
+                background-color: #545140;
+                width: 80%;
+                height: 1rem;
+                > p{
+                    position: absolute;
+                    z-index: 10;
+                    margin: 0;
+                }
+                > .sliderValue{
+                    width: 100%;
+                    height: 100%;
+                    &#health{
+                        background-color: rgb(163, 117, 117);
+                    }
+                    &#armor{
+                        background-color: rgb(103, 103, 174);
+                    }
+                    &#stamina{
+                        background-color: rgb(180, 180, 118);
+                    }
+                }
+            }
+            > img{
+                width: 80%;
+                object-fit: cover;
+                margin: 0 auto;
+                margin-top: 1rem;
+            }
+        }
+    }
+    #bottom{
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 8rem;
+        justify-content: center;
+        > #all-buttons{
+            display: flex;
+            background-color: #e9ddae;
+            justify-content: center;
+            width: 50%;
+            padding: 1rem;
+            border-radius: 1rem 1rem 0 0;
+            button{
+                background-color: #545140;
+                border: none;
+                margin: .1rem;
+                font-weight: 800;
+                color: #e9ddae;
+                transition: background-color .3s cubic-bezier(0, 0, 0.06, 0.99);
+                &:hover{
+                    background-color: #66624d;
+                }
+                &:disabled{
+                    background-color: #545140a1;
+                }
+            }
+            > #attack-buttons{
+                display: flex;
+                width: 40%;
+                flex-direction: column;
+                > button{
+                    height: 33.333333%;
+                    &:first-of-type{
+                        border-radius: 1rem 0 0 0;
+                    }
+                    &:last-of-type{
+                        border-radius: 0 0 0 1rem;  
+                    }
+                }
+            }
+            > button{
+                width: 20%;
+                &:last-of-type{
+                    border-radius: 0 1rem 1rem 0;  
+                }
+            }
+        }
+    }
 }

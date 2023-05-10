@@ -3,8 +3,119 @@ html {
   font-family: "Inconsolata", monospace;
 }
 
-* {
+body {
+  background-color: rgb(109, 103, 86);
+  display: flex;
+  overflow: hidden;
+  width: 100vw;
+  height: 90vh;
+}
+body * {
   box-sizing: border-box;
+}
+body > .side {
+  display: flex;
+  width: 50vw;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+body > .side > .card {
+  display: flex;
+  flex-direction: column;
+  background-color: #e9ddae;
+  border-style: solid;
+  border-color: #545140;
+  border-width: 0.5rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+body > .side > .card > .title {
+  font-weight: 800;
+  width: 100%;
+}
+body > .side > .card > .sliderBody {
+  margin: 0.3rem auto;
+  display: flex;
+  justify-content: center;
+  background-color: #545140;
+  width: 80%;
+  height: 1rem;
+}
+body > .side > .card > .sliderBody > p {
+  position: absolute;
+  z-index: 10;
+  margin: 0;
+}
+body > .side > .card > .sliderBody > .sliderValue {
+  width: 100%;
+  height: 100%;
+}
+body > .side > .card > .sliderBody > .sliderValue#health {
+  background-color: rgb(163, 117, 117);
+}
+body > .side > .card > .sliderBody > .sliderValue#armor {
+  background-color: rgb(103, 103, 174);
+}
+body > .side > .card > .sliderBody > .sliderValue#stamina {
+  background-color: rgb(180, 180, 118);
+}
+body > .side > .card > img {
+  width: 80%;
+  object-fit: cover;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+body #bottom {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 8rem;
+  justify-content: center;
+}
+body #bottom > #all-buttons {
+  display: flex;
+  background-color: #e9ddae;
+  justify-content: center;
+  width: 50%;
+  padding: 1rem;
+  border-radius: 1rem 1rem 0 0;
+}
+body #bottom > #all-buttons button {
+  background-color: #545140;
+  border: none;
+  margin: 0.1rem;
+  font-weight: 800;
+  color: #e9ddae;
+  transition: background-color 0.3s cubic-bezier(0, 0, 0.06, 0.99);
+}
+body #bottom > #all-buttons button:hover {
+  background-color: #66624d;
+}
+body #bottom > #all-buttons button:disabled {
+  background-color: rgba(84, 81, 64, 0.631372549);
+}
+body #bottom > #all-buttons > #attack-buttons {
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+}
+body #bottom > #all-buttons > #attack-buttons > button {
+  height: 33.333333%;
+}
+body #bottom > #all-buttons > #attack-buttons > button:first-of-type {
+  border-radius: 1rem 0 0 0;
+}
+body #bottom > #all-buttons > #attack-buttons > button:last-of-type {
+  border-radius: 0 0 0 1rem;
+}
+body #bottom > #all-buttons > button {
+  width: 20%;
+}
+body #bottom > #all-buttons > button:last-of-type {
+  border-radius: 0 1rem 1rem 0;
 }
 
 /*# sourceMappingURL=style.css.map */
