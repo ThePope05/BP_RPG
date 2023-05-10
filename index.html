@@ -4,10 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styling/css/style.css">
     <title>RPGame</title>
 </head>
 <body>
+    <div id="left">
+        <div class="card" id="Player">
+            <h1 class="title">Player lvl1</h1>
+            <p class="health">Health: 100</p>
+            <p class="armor">Armor: 100</p>
+            <p class="stamina">Stamina: 100</p>
+            <img class="body" src="assets/images/PersonPlaceholder.png">
+        </div>
+    </div>
+    <div id="right">
+        <div class="card" id="Enemy">
+            <h1 class="title">Enemy lvl1</h1>
+            <p class="health">Health: 100</p>
+            <p class="armor">Armor: 100</p>
+            <p class="stamina">Stamina: 100</p>
+            <img class="body" src="assets/images/PersonPlaceholder.png">
+        </div>
+    </div>
+    <div id="bottom">
+        <div id="attack-buttons">
+            <button onclick="CurEnemy.TakeDamage(MyPlayer.CalculateDamage('Light')); ChangeMove()">Light</button>
+            <button onclick="CurEnemy.TakeDamage(MyPlayer.CalculateDamage('Middle')); ChangeMove()">Middle</button>
+            <button onclick="CurEnemy.TakeDamage(MyPlayer.CalculateDamage('Heavy')); ChangeMove()">Heavy</button>
+        </div>
+        <button></button>
+        <button></button>
+    </div>
+
+    <script src="js/classes/Names.js"></script>
     <script src="js/classes/Person.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/GameManager.js"></script>
+    <script src="js/RoundManager.js"></script>
 </body>
 </html>

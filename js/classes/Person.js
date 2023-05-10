@@ -5,8 +5,12 @@ class Person{
     Armor;
     Level;
 
-    constructor(name, health, stamina, armor, level){
-        this.Name = name;
+    constructor(name = null, health, stamina, armor, level){
+        if(name == null){
+            this.Name = GetRandomName();
+        }else{
+            this.Name = name;
+        }
         this.Health = health;
         this.Stamina = stamina;
         this.Armor = armor;
