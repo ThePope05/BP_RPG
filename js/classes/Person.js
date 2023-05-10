@@ -31,9 +31,9 @@ class Person{
         }
     }
 
-    TakeStamina(points){
-        if(this.Stamina + points > 100){
-            this.Stamina = 100;
+    ChangeStamina(points){
+        if(this.Stamina + points < 0){
+            this.Stamina = 0;
         }
         else{
             this.Stamina += points;
@@ -46,6 +46,21 @@ class Person{
         }
         else{
             this.Health += points;
+        }
+    }
+
+    CalculateDamage(attackType){
+        if(attackType == "Light"){
+            this.ChangeStamina(0 - (this.Level * 2));
+            return (this.Level * 1.5);
+        }
+        else if(attackType == "Middle"){
+            this.ChangeStamina(0 - (this.Level * 5));
+            return (this.Level * 2.5);
+        }
+        else if(attackType == "Heavy"){
+            this.ChangeStamina(0 - (this.Level * 10));
+            return (this.Level * 5);
         }
     }
 }
