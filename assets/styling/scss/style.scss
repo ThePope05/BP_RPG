@@ -3,6 +3,33 @@ html{
     font-family: 'Inconsolata', monospace;
 }
 
+@keyframes CardEnterLTR {
+    0%{
+        transform: translateX(-200%);
+        box-shadow: 3rem 3rem 1rem #0000006b;
+    }
+    70%{
+        box-shadow: 2.5rem 2.5rem .8rem #0000006b;
+    }
+    100%{
+        transform: translateX(0);
+        box-shadow: 0 0 0 #00000093;
+    }
+}
+@keyframes CardEnterRTL {
+    0%{
+        transform: translateX(200%);
+        box-shadow: 3rem 3rem 1rem #0000006b;
+    }
+    70%{
+        box-shadow: 2.5rem 2.5rem .8rem #0000006b;
+    }
+    100%{
+        transform: translateX(0);
+        box-shadow: 0 0 0 #00000093;
+    }
+}
+
 body{
     * {
         box-sizing: border-box;
@@ -12,6 +39,8 @@ body{
     overflow: hidden;
     width: 100vw;
     height: 90vh;
+    margin: 0;
+    padding: 0;
     > .side{
         display: flex;
         width: 50vw;
@@ -28,6 +57,12 @@ body{
             border-radius: 1rem;
             padding: 1rem;
             text-align: center;
+            &#Player{
+                animation: CardEnterLTR 3s cubic-bezier(0.75, -0.01, 0.26, 0.99);
+            }
+            &#Enemy{
+                animation: CardEnterRTL 3s cubic-bezier(0.75, -0.01, 0.26, 0.99);
+            }
             > .title{
                 font-weight: 800;
                 width: 100%;
