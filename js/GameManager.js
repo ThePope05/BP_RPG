@@ -3,7 +3,7 @@ const EnemyImg = document.querySelector("#Enemy > .body");
 
 let MyPlayer = new Person("Simon", 100, 100, 100, 5);
 
-let CurEnemy = new Enemy(150, 200, 200, 10);
+let CurEnemy = new Enemy(150, 200, 200, 6);
 
 const LiAtButton = document.querySelector("#LightAttack").addEventListener('click', () => {
     CurEnemy.ChangeHealth(MyPlayer.CalculateDamage("Light"));

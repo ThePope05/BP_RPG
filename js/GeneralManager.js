@@ -11,15 +11,15 @@ function SetSliderVal(selector, newVal){
 function UpdateText(){
     const PlayerTi = document.querySelector("#Player > .title");
     PlayerTi.innerHTML = MyPlayer.Name + " Lvl-" + MyPlayer.Level;
-    SetSliderVal("#Player #health", MyPlayer.Health);
-    SetSliderVal("#Player #armor", MyPlayer.Armor);
-    SetSliderVal("#Player #stamina", MyPlayer.Stamina);
+    SetSliderVal("#Player #health", MyPlayer.Health / (MyPlayer.MaxHealth / 100));
+    SetSliderVal("#Player #armor", MyPlayer.Armor / (MyPlayer.MaxArmor / 100));
+    SetSliderVal("#Player #stamina", MyPlayer.Stamina / (MyPlayer.MaxStamina / 100));
 
     const EnemyTi = document.querySelector("#Enemy > .title");
     EnemyTi.innerHTML = CurEnemy.Name + " Lvl-" + CurEnemy.Level;
-    SetSliderVal("#Enemy #health", CurEnemy.Health);
-    SetSliderVal("#Enemy #armor", CurEnemy.Armor);
-    SetSliderVal("#Enemy #stamina", CurEnemy.Stamina);
+    SetSliderVal("#Enemy #health", CurEnemy.Health / (CurEnemy.MaxHealth / 100));
+    SetSliderVal("#Enemy #armor", CurEnemy.Armor / (CurEnemy.MaxArmor / 100));
+    SetSliderVal("#Enemy #stamina", CurEnemy.Stamina / (CurEnemy.MaxStamina / 100));
 
     console.log(CurEnemy.Armor + " " + CurEnemy.Health);
     console.log(MyPlayer.Armor + " " + MyPlayer.Health);

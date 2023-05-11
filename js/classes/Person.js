@@ -6,7 +6,9 @@ class Person{
     MaxHealth;
     RegenAmount;
     Stamina;
+    MaxStamina;
     Armor;
+    MaxArmor;
     Level;
 
     constructor(name = null, health, stamina, armor, level){
@@ -14,8 +16,10 @@ class Person{
         this.MaxHealth = health;
         this.Health = this.MaxHealth;
         this.RegenAmount = 2;
-        this.Stamina = stamina;
-        this.Armor = armor;
+        this.MaxStamina = stamina;
+        this.Stamina = this.MaxStamina;
+        this.MaxArmor = armor;
+        this.Armor = this.MaxArmor;
         this.Level = level;
     }
 
