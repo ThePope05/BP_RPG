@@ -2,13 +2,6 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function DisableButtons(state){
-    const ActionButtons = document.querySelectorAll("#bottom button");
-    ActionButtons.forEach((curBut) => {
-        curBut.disabled = state;
-    });
-}
-
 function SetSliderVal(selector, newVal){
     let slider = document.querySelector(selector);
 
@@ -30,4 +23,37 @@ function UpdateText(){
 
     console.log(CurEnemy.Armor + " " + CurEnemy.Health);
     console.log(MyPlayer.Armor + " " + MyPlayer.Health);
+}
+
+function UpdateButton(){
+    const LiAtButton = document.querySelector("#LightAttack");
+    const MiAtButton = document.querySelector("#MiddleAttack");
+    const HeAtButton = document.querySelector("#HeavyAttack");
+    const RestButton = document.querySelector("#RestButton");
+    const HealButton = document.querySelector("#HealButton");
+
+    if(!PlayerMove || MyPlayer.Health == 0){
+        LiAtButton.disabled = true;
+        MiAtButton.disabled = true;
+        HeAtButton.disabled = true;
+        RestButton.disabled = true;
+        HealButton.disabled = true;
+    }else{
+        LiAtButton.disabled = false;
+        MiAtButton.disabled = false;
+        HeAtButton.disabled = false;
+
+        if(MyPlayer.Health < MyPlayer.MaxHealth && MyPlayer.RegenAmount > 0){
+            HealButton.disabled = false;
+        }else{
+            HealButton.disabled = true;
+        }
+
+        if(MyPlayer.Stamina < 100){
+            RestButton.disabled = false;
+        }
+        else{
+            RestButton.disabled = true;
+        }
+    }
 }

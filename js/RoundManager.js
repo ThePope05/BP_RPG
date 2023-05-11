@@ -6,11 +6,11 @@ ChangeMove();
 async function ChangeMove(){
     if(!PlayerMove){
         PlayerMove = true;
-        DisableButtons(false);
+        UpdateButton();
     }
     else{
         PlayerMove = false;
-        DisableButtons(true);
+        UpdateButton();
         await CurEnemy.DoMove();
         ChangeMove();
     }

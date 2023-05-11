@@ -7,8 +7,8 @@ class Enemy extends Person{
 
     async DoMove(){
         await sleep(3000);
-        if(this.Health <= (this.Health / 2)){
-            this.ChangeHealth(this.Health / 2);
+        if(this.Health <= (this.MaxHealth / 2) && this.RegenAmount > 0){
+            this.ChangeHealth(this.MaxHealth - this.Health / 2);
         }else{
             MyPlayer.ChangeHealth(this.CalculateDamage("Middle"));
         }

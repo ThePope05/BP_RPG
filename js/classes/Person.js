@@ -3,13 +3,17 @@
 class Person{
     Name;
     Health;
+    MaxHealth;
+    RegenAmount;
     Stamina;
     Armor;
     Level;
 
     constructor(name = null, health, stamina, armor, level){
         this.Name = name;
-        this.Health = health;
+        this.MaxHealth = health;
+        this.Health = this.MaxHealth;
+        this.RegenAmount = 2;
         this.Stamina = stamina;
         this.Armor = armor;
         this.Level = level;
@@ -33,6 +37,7 @@ class Person{
                 }
             }
         }else{
+            this.RegenAmount--;
             if(this.Health + points > 100){
                 this.Health = 100;
             }
