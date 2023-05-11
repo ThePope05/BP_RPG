@@ -1,9 +1,8 @@
 
 class Enemy extends Person{
 
-    constructor(name, health, stamina, armor, level){
-
-        super(name, health, stamina, armor, level);
+    constructor(health, stamina, armor, level){
+        super(GetRandomName(), health, stamina, armor, level);
     }
 
     async DoMove(){
