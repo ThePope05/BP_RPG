@@ -18,7 +18,7 @@ class Person{
     ChangeHealth(points){
         if(points < 0){
             let ans = [];
-            for(let i = 0; i < points; i++){
+            for(let i = 0; i < (0-points); i++){
                 if(this.Armor <= 0){
                     ans["Armor"] = "Depleted";
                     if(this.Health <= 0){

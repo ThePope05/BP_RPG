@@ -24,7 +24,10 @@ function UpdateText(){
 
     const EnemyTi = document.querySelector("#Enemy > .title");
     EnemyTi.innerHTML = CurEnemy.Name + " Lvl-" + CurEnemy.Level;
-    SetSliderVal("#Enemy #health", MyPlayer.Health);
-    SetSliderVal("#Enemy #armor", MyPlayer.Armor);
-    SetSliderVal("#Enemy #stamina", MyPlayer.Stamina);
+    SetSliderVal("#Enemy #health", CurEnemy.Health);
+    SetSliderVal("#Enemy #armor", CurEnemy.Armor);
+    SetSliderVal("#Enemy #stamina", CurEnemy.Stamina);
+
+    console.log(CurEnemy.Armor + " " + CurEnemy.Health);
+    console.log(MyPlayer.Armor + " " + MyPlayer.Health);
 }

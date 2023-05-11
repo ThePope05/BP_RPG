@@ -6,7 +6,7 @@ let MyPlayer = new Person("Simon", 100, 100, 100, 5);
 let CurEnemy = new Enemy(100, 100, 100, 5);
 
 const LiAtButton = document.querySelector("#LightAttack").addEventListener('click', () => {
-    CurEnemy.TakeDamage(MyPlayer.CalculateDamage("Light"));
+    CurEnemy.ChangeHealth(MyPlayer.CalculateDamage("Light"));
 
     ChangeMove();
 });
