@@ -26,7 +26,7 @@ class Person{
     ChangeHealth(points){
         if(points < 0){
             let ans = [];
-            for(let i = 0; i < (0-points); i++){
+            for(let i = 0; i > points; i--){
                 if(this.Armor <= 0){
                     ans["Armor"] = "Depleted";
                     if(this.Health <= 0){
@@ -61,14 +61,33 @@ class Person{
     }
 
     CalculateDamage(attackType){
+        let randomDam = 0;
         if(attackType == "Light"){
-            return 0 - Math.floor(this.Level * 3);
+            if(Math.random() < .5){
+                randomDam = 0 - Math.floor(Math.random() * 10)
+            }
+            else{
+                randomDam = Math.floor(Math.random() * 10);
+            }
+            return 0 - (Math.floor(this.Level * 3) + randomDam);
         }
         else if(attackType == "Middle"){
-            return 0 - Math.floor(this.Level * 6);
+            if(Math.random() < .5){
+                randomDam = 0 - Math.floor(Math.random() * 10)
+            }
+            else{
+                randomDam = Math.floor(Math.random() * 10);
+            }
+            return 0 - (Math.floor(this.Level * 6) + randomDam);
         }
         else if(attackType == "Heavy"){
-            return 0 - Math.floor(this.Level * 10);
+            if(Math.random() < .5){
+                randomDam = 0 - Math.floor(Math.random() * 10)
+            }
+            else{
+                randomDam = Math.floor(Math.random() * 10);
+            }
+            return 0 - (Math.floor(this.Level * 10) + randomDam);
         }
     }
 }

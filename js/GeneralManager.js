@@ -24,6 +24,16 @@ function UpdateText(){
     console.log(CurEnemy.Armor + " " + CurEnemy.Health);
     console.log(MyPlayer.Armor + " " + MyPlayer.Health);
 }
+function ShowHideEl(selector){
+    const element = document.querySelector(selector);
+
+    if(element.style.opacity == 0){
+        element.style.opacity = 1;
+    }
+    else{
+        element.style.opacity = 0;
+    }
+}
 
 function UpdateButton(){
     const LiAtButton = document.querySelector("#LightAttack");
