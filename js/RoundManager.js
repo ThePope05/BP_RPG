@@ -17,6 +17,11 @@ async function ChangeMove(){
             ChangeMove();
         }
     }else{
-        console.log("Playermove = " + PlayerMove);
+        if(PlayerMove){
+            ShowHideEl("#winScreen");
+        }
+        else{
+            ShowHideEl("#loseScreen");
+        }
     }
 }

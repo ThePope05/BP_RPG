@@ -102,7 +102,7 @@ body > .side > .card > img {
   margin: 0 auto;
   margin-top: 1rem;
 }
-body #notification {
+body .notification {
   display: flex;
   position: absolute;
   width: 100vw;
@@ -113,7 +113,7 @@ body #notification {
   align-items: center;
   transition: opacity 0.5s ease-out;
 }
-body #notification > h1 {
+body .notification > h1 {
   color: #e9ddae;
   font-weight: 900;
   text-align: center;
