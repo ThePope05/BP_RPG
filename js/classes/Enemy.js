@@ -6,13 +6,13 @@ class Enemy extends Person{
     }
 
     async DoMove(){
-        ShowHideEl("#loadingScreen");
-        await sleep(3000);
+        ShowHideEl("#loadingScreen", true, 100);
+        await sleep(2000);
         if(this.Health <= (this.MaxHealth / 2) && this.RegenAmount > 0){
-            this.ChangeHealth(this.MaxHealth - this.Health / 2);
+            this.ChangeHealth(Math.floor((this.MaxHealth - this.Health) / 2));
         }else{
-            MyPlayer.ChangeHealth(this.CalculateDamage("Middle"));
+            MyPlayer.ChangeHealth(Math.floor(this.GetDamage("Middle")));
         }
-        ShowHideEl("#loadingScreen");
+        ShowHideEl("#loadingScreen", false, -10);
     }
 }

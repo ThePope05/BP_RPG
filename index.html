@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styling/css/style.css">
     <title>RPGame</title>
@@ -16,41 +17,54 @@
     </div>
     <div class="notification" id="winScreen" style="opacity: 0;">
         <h1>You win!</h1>
+        <button onclick="NextScene()">Next fight</button>
     </div>
     <div class="notification" id="loseScreen" style="opacity: 0;">
-        <h1>You win!</h1>
+        <h1>You lose</h1>
+        <button onclick="ResetScene()">Restart</button>
+    </div>
+    <div class="navButtons" style="opacity: 1;">
+        <button onclick="CreateRemoveConsole()" id="consoleToggle">
+            <span class="material-symbols-outlined">import_contacts</span>
+        </button>
     </div>
     <div id="left" class="side">
-        <div class="card" id="Player">
+        <div class="card" id="Player" style="opacity: 1;">
             <h1 class="title">Player lvl-X</h1>
             <div class="sliderBody">
-                <p>Health</p>
+                <p class="sliderHealthText">Health</p>
                 <div class="sliderValue" id="health"></div>
             </div>
             <div class="sliderBody">
-                <p>Armor</p>
+                <p class="sliderArmorText">Armor</p>
                 <div class="sliderValue" id="armor"></div>
             </div>
             <div class="sliderBody">
-                <p>Stamina</p>
+                <p class="sliderStamText">Stamina</p>
                 <div class="sliderValue" id="stamina"></div>
             </div>
             <img class="body" src="assets/images/PersonPlaceholder.png">
         </div>
     </div>
+    <div class="side" id="middle">
+        <div id="console">
+            
+        </div>
+    </div>
     <div id="right" class="side">
-        <div class="card" id="Enemy">
+        <div class="card" id="Enemy" style="opacity: 1;">
+
             <h1 class="title">Enemy lvl-X</h1>
             <div class="sliderBody">
-                <p>Health</p>
+                <p class="sliderHealthText">Health</p>
                 <div class="sliderValue" id="health"></div>
             </div>
             <div class="sliderBody">
-                <p>Armor</p>
+                <p class="sliderArmorText">Armor</p>
                 <div class="sliderValue" id="armor"></div>
             </div>
             <div class="sliderBody">
-                <p>Stamina</p>
+                <p class="sliderStamText">Stamina</p>
                 <div class="sliderValue" id="stamina"></div>
             </div>
             <img class="body" src="assets/images/PersonPlaceholder.png">

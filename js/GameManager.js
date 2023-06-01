@@ -1,32 +1,29 @@
-const PlayerImg = document.querySelector("#Player > .body");
-const EnemyImg = document.querySelector("#Enemy > .body");
+let MyPlayer = new Person("Simon", 50, 100, 25, 1);
 
-let MyPlayer = new Person("Simon", 100, 100, 100, 5);
-
-let CurEnemy = new Enemy(50, 200, 200, 6);
+let CurEnemy = new Enemy(30, 100, 20, 1);
+let FirstEnemy = CurEnemy;
 
 const LiAtButton = document.querySelector("#LightAttack").addEventListener('click', () => {
-    console.log(MyPlayer.CalculateDamage('Light'));
-    CurEnemy.ChangeHealth(MyPlayer.CalculateDamage("Light"));
+    CurEnemy.ChangeHealth(MyPlayer.GetDamage("Light"));
 
     ChangeMove();
 });
 
 const MiAtButton = document.querySelector("#MiddleAttack").addEventListener('click', () => {
-    CurEnemy.ChangeHealth(MyPlayer.CalculateDamage("Middle"));
+    CurEnemy.ChangeHealth(MyPlayer.GetDamage("Middle"));
 
     ChangeMove();
 });
 
 const HeAtButton = document.querySelector("#HeavyAttack").addEventListener('click', () => {
-    CurEnemy.ChangeHealth(MyPlayer.CalculateDamage("Heavy"));
+    CurEnemy.ChangeHealth(MyPlayer.GetDamage("Heavy"));
 
     ChangeMove();
 });
 
 const HealButton = document.querySelector("#HealButton").addEventListener('click', () => {
     if(MyPlayer.RegenAmount > 0 && MyPlayer.Health < MyPlayer.MaxHealth){
-        MyPlayer.ChangeHealth(MyPlayer.MaxHealth - MyPlayer.Health / 2);
+        MyPlayer.ChangeHealth(Math.floor((MyPlayer.MaxHealth - MyPlayer.Health) / 2));
     
         ChangeMove();
     }

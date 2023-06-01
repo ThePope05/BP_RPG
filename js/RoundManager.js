@@ -18,10 +18,14 @@ async function ChangeMove(){
         }
     }else{
         if(PlayerMove){
-            ShowHideEl("#winScreen");
+            ShowHideEl("#winScreen", true, 100);
+            const Enemy = document.querySelector("#Enemy");
+            Enemy.classList.add("Dead");
         }
         else{
-            ShowHideEl("#loseScreen");
+            ShowHideEl("#loseScreen", true, 100);
+            const Player = document.querySelector("#Player");
+            Player.classList.add("Dead");
         }
     }
 }
