@@ -98,6 +98,7 @@ body > .side#middle > div#console {
   background-color: #d9d9d9;
   align-items: flex-start;
   overflow-y: scroll;
+  overflow-x: clip;
   width: 30vw;
   height: 50%;
   border-radius: 0 0 1rem 1rem;
@@ -131,6 +132,13 @@ body > .side#middle > div#console p > b.right {
 }
 body > .side#middle > div#console p > b.left {
   left: 0.2rem;
+}
+body > .side#middle > div#console p > hr {
+  width: 100%;
+  height: 100%;
+  background-color: #9e9e9e;
+  border: solid #9e9e9e;
+  border-radius: 0.1rem;
 }
 body > .side > .card {
   display: flex;
