@@ -103,18 +103,34 @@ body > .side#middle > div#console {
   border-radius: 0 0 1rem 1rem;
 }
 body > .side#middle > div#console p {
+  background-color: #c5c5c5;
+  border-radius: 0.2rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
   margin: 0.2rem 0;
-  padding: 0;
+  padding: 0.2rem;
   width: 100%;
   height: max-content;
 }
 body > .side#middle > div#console p.Crit {
   color: rgb(150, 57, 57);
+  background-color: #c7adad;
   font-weight: 900;
 }
 body > .side#middle > div#console p.Heal {
   color: rgb(53, 115, 53);
+  background-color: #bdcab6;
   font-weight: 900;
+}
+body > .side#middle > div#console p > b {
+  position: absolute;
+}
+body > .side#middle > div#console p > b.right {
+  right: 0.2rem;
+}
+body > .side#middle > div#console p > b.left {
+  left: 0.2rem;
 }
 body > .side > .card {
   display: flex;
@@ -128,10 +144,14 @@ body > .side > .card {
   text-align: center;
 }
 body > .side > .card#Player {
+  background-color: #c9cfec;
+  border-color: #899ec2;
   animation: CardEnterLTR 3s cubic-bezier(0.75, -0.01, 0.26, 0.99);
   animation-fill-mode: forwards !important;
 }
 body > .side > .card#Enemy {
+  background-color: #ecc9c9;
+  border-color: #b78585;
   animation: CardEnterRTL 3s cubic-bezier(0.75, -0.01, 0.26, 0.99);
   animation-fill-mode: forwards !important;
 }
