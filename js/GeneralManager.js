@@ -46,7 +46,6 @@ function UpdateText(){
         consoleEl.innerHTML = "";
         let ReverseText = ReverseArray(ConsoleText);
         ReverseText.forEach(Text => {
-            console.log(Text);
             let row = document.createElement("p");
             if(Text.includes(MyPlayer.Name)){
                 row.innerHTML = "<b class='left'> <- </b>";
@@ -65,9 +64,16 @@ function UpdateText(){
             if(Text.includes("Healed")){
                 row.classList.add("Heal")
             }
+            if(Text.includes("Misses")){
+                row.classList.add("Miss")
+            }
             consoleEl.appendChild(row);
         });
     }
+}
+
+function normalize(value, min, max) {
+    return (value - min) / (max - min);
 }
 
 function ReverseArray(curArray){
@@ -205,13 +211,16 @@ function CreateEnemy(){
 
     CurEnemy = new Enemy(lastEnemy.MaxHealth + 10, lastEnemy.MaxStamina, lastEnemy.MaxArmor + 10, lastEnemy.Level + 1);
     document.querySelector("#Enemy").classList.remove("Dead");
-    UpdateText();
     ShowHideEl("#winScreen", false, -10);
+}
 
+function LevelPlayer(){
+    MyPlayer = new Player(MyPlayer.MaxHealth + 10, MyPlayer.MaxStamina, MyPlayer.MaxArmor + 10, MyPlayer.Level + 1);
 }
 
 function NextScene(){
     CreateEnemy();
+    LevelPlayer();
     MyPlayer.ResetStats();
     CurEnemy.ResetStats();
     UpdateButton();

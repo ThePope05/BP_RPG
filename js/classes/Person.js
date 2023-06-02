@@ -43,7 +43,8 @@ class Person{
                 ConsoleAddMessage(this.Name + " Died");
                 ConsoleAddMessage("<hr>");
             }
-        }else{
+        }
+        else if(points != 0){
             ConsoleAddMessage(this.Name + " Healed: " + points + " points");
             this.RegenAmount--;
             if(this.Health + points > this.MaxHealth){
@@ -66,13 +67,20 @@ class Person{
 
     GetDamage(attackType){
         let CritHit = Math.random();
-        if(CritHit >= 0.80){
-            ConsoleAddMessage(this.Name + " Does critical hit");
-            this.ChangeStamina((0 - (this.CalculateDamage(attackType) * 2)));
-            return this.CalculateDamage(attackType) + ((this.CalculateDamage(attackType) / 100) * 80);
+        let MissChange = Math.random();
+        if(MissChange <= .9){
+            if(CritHit >= 0.80){
+                ConsoleAddMessage(this.Name + " Does critical hit");
+                this.ChangeStamina((0 - (this.CalculateDamage(attackType) * 2)));
+                return this.CalculateDamage(attackType) + ((this.CalculateDamage(attackType) / 100) * 80);
+            }
+            else{
+                return this.CalculateDamage(attackType);
+            }
         }
         else{
-            return this.CalculateDamage(attackType);
+            ConsoleAddMessage(this.Name + " Misses a " + attackType + " attack");
+            return 0;
         }
     }
 
