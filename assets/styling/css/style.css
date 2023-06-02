@@ -124,6 +124,11 @@ body > .side#middle > div#console p.Heal {
   background-color: #bdcab6;
   font-weight: 900;
 }
+body > .side#middle > div#console p.Miss {
+  color: rgb(35, 35, 35);
+  background-color: #9c9c9c;
+  font-weight: 900;
+}
 body > .side#middle > div#console p > b {
   position: absolute;
 }

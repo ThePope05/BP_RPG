@@ -120,6 +120,11 @@ body{
                         background-color: #bdcab6;
                         font-weight: 900;
                     }
+                    &.Miss{
+                        color: rgb(35, 35, 35);
+                        background-color: #9c9c9c;
+                        font-weight: 900;
+                    }
                     > b{
                         position: absolute;
                         &.right{
