@@ -46,14 +46,25 @@ function UpdateText(){
         consoleEl.innerHTML = "";
         let ReverseText = ReverseArray(ConsoleText);
         ReverseText.forEach(Text => {
+            console.log(Text);
             let row = document.createElement("p");
+            if(Text.includes(MyPlayer.Name)){
+                row.innerHTML = "<b class='left'> <- </b>";
+                row.innerHTML = row.innerHTML + Text;
+            }
+            else if(Text.includes(CurEnemy.Name)){
+                row.innerHTML = Text;
+                row.innerHTML = row.innerHTML + "<b class='right'> -> </b>";
+            }
+            else{
+                row.innerHTML = Text;
+            }
             if(Text.includes("critical") || Text.includes("Died")){
                 row.classList.add("Crit");
             }
             if(Text.includes("Healed")){
                 row.classList.add("Heal")
             }
-            row.innerHTML = Text;
             consoleEl.appendChild(row);
         });
     }

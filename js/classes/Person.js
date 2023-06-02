@@ -41,6 +41,7 @@ class Person{
             }
             if(this.Health <= 0){
                 ConsoleAddMessage(this.Name + " Died");
+                ConsoleAddMessage("<hr>");
             }
         }else{
             ConsoleAddMessage(this.Name + " Healed: " + points + " points");
