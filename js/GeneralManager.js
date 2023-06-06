@@ -62,10 +62,13 @@ function UpdateText(){
                 row.classList.add("Crit");
             }
             if(Text.includes("Healed")){
-                row.classList.add("Heal")
+                row.classList.add("Heal");
             }
             if(Text.includes("Misses")){
-                row.classList.add("Miss")
+                row.classList.add("Miss");
+            }
+            if(Text.includes("Rested")){
+                row.classList.add("Rest");
             }
             consoleEl.appendChild(row);
         });

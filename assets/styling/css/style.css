@@ -126,6 +126,11 @@ body > .side#middle > div#console p.Miss {
   background-color: #9c9c9c;
   font-weight: 900;
 }
+body > .side#middle > div#console p.Rest {
+  color: rgb(150, 138, 57);
+  background-color: #cac7b6;
+  font-weight: 900;
+}
 body > .side#middle > div#console p > b {
   position: absolute;
 }

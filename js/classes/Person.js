@@ -66,6 +66,7 @@ class Person{
             }
         }
         else if(points != 0){
+            ConsoleAddMessage(this.Name + " Rested for: " + points + " points");
             if(this.Stamina + points > this.MaxStamina){
                 this.Stamina = this.MaxStamina;
             }
