@@ -31,7 +31,7 @@ const HealButton = document.querySelector("#HealButton").addEventListener('click
 });
 
 const RestButton = document.querySelector("#RestButton").addEventListener('click', () => {
-    MyPlayer.ChangeStamina(25);
+    MyPlayer.ChangeStamina(Math.floor(25 * (MyPlayer.MaxStamina / 100)));
     
     ChangeMove();
 });

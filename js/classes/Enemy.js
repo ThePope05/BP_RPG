@@ -16,7 +16,7 @@ class Enemy extends Person{
             MyPlayer.ChangeHealth(Math.floor(this.GetDamage("Middle")));
         }
         else{
-            this.ChangeStamina(25);
+            this.ChangeStamina(Math.floor(25 * (this.MaxStamina / 100)));
         }
         ShowHideEl("#loadingScreen", false, -10);
     }
