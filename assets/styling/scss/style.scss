@@ -219,11 +219,15 @@ body{
         align-items: center;
         flex-direction: column;
         transition: opacity .5s ease-out;
-        >h1{
+        >h1, >h3{
             color: #e9ddae;
             font-weight: 900;
             text-align: center;
             font-size: 4rem;
+        }
+        > h3{
+            font-size: 2rem;
+            margin: 0;
         }
         >button{
             font-size: 3rem;
@@ -237,6 +241,49 @@ body{
             transition: background-color .3s ease-out;
             &:hover{
                 background-color: #000;
+            }
+        }
+        &#levelScreen{
+            background-color: #000b;
+            > #cards{
+                width: 80%;
+                height: 80%;
+                margin: auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                > .card{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    background-color: #e2dfd2;
+                    box-shadow: 0rem 0rem 1rem rgba(255, 255, 255, 0.333);
+                    border-style: solid;
+                    border-color: #838178;
+                    color: #474747;
+                    width: 20%;
+                    height: 50%;
+                    border-width: .5rem;
+                    border-radius: 1rem;
+                    padding: 1rem;
+                    text-align: center;
+                    transition: box-shadow .2s ease-in;
+                    &:hover{
+                        box-shadow: 0rem 0rem 2rem rgba(255, 255, 255, 0.333);
+                    }
+                    &:active{
+                        box-shadow: 0rem 0rem 1rem rgba(255, 255, 255, 0.333);
+                    }
+                    > .title{
+                        font-weight: 800;
+                        width: 100%;
+                    }
+                    > .value{
+                        width: 100%;
+                        font-size: 6rem;
+                        margin: 1rem;
+                    }
+                }
             }
         }
     }

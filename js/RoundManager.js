@@ -18,7 +18,7 @@ async function ChangeMove(){
         }
     }else{
         if(PlayerMove){
-            ShowHideEl("#winScreen", true, 100);
+            ShowHideEl("#levelScreen", true, 10);
             const Enemy = document.querySelector("#Enemy");
             Enemy.classList.add("Dead");
         }

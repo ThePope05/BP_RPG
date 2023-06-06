@@ -23,6 +23,24 @@
         <h1>You lose</h1>
         <button onclick="ResetScene()">Restart</button>
     </div>
+    <div class="notification" id="levelScreen" style="opacity: 0;">
+        <h1>Level up!</h1>
+        <h3>Choose your upgrade</h3>
+        <div id="cards"> 
+            <button class="card" id="UpgradeHealth">
+                <h1 class="title">Health</h1>
+                <h2 class="value">+10</h2>
+            </button>
+            <button class="card" id="UpgradeArmor">
+                <h1 class="title">Armor</h1>
+                <h2 class="value">+10</h2>
+            </button>
+            <button class="card" id="UpgradeStamina">
+                <h1 class="title">Stamina</h1>
+                <h2 class="value">+10</h2>
+            </button>
+        </div>
+    </div>
     <div class="navButtons" style="opacity: 1;">
         <button onclick="CreateRemoveConsole()" id="consoleToggle">
             <span class="material-symbols-outlined">import_contacts</span>

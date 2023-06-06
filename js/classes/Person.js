@@ -85,7 +85,6 @@ class Person{
                 return this.CalculateDamage(attackType) + ((this.CalculateDamage(attackType) / 100) * 80);
             }
             else{
-                console.log((this.CalculateDamage(attackType) * 2));
                 this.ChangeStamina((this.CalculateDamage(attackType) * 2));
                 return this.CalculateDamage(attackType);
             }

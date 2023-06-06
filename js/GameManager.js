@@ -34,3 +34,21 @@ const RestButton = document.querySelector("#RestButton").addEventListener('click
     
     ChangeMove();
 });
+
+const UpgradeHealButton = document.querySelector("#UpgradeHealth").addEventListener('click', () => {
+    MyPlayer = new Person(MyPlayer.Name, MyPlayer.MaxHealth + 10, MyPlayer.MaxStamina, MyPlayer.MaxArmor, MyPlayer.Level + 1);
+    
+    NextScene();
+});
+
+const UpgradeArmorButton = document.querySelector("#UpgradeArmor").addEventListener('click', () => {
+    MyPlayer = new Person(MyPlayer.Name, MyPlayer.MaxHealth, MyPlayer.MaxStamina, MyPlayer.MaxArmor + 10, MyPlayer.Level + 1);
+    
+    NextScene();
+});
+
+const UpgradeStaminaButton = document.querySelector("#UpgradeStamina").addEventListener('click', () => {
+    MyPlayer = new Person(MyPlayer.Name, MyPlayer.MaxHealth, MyPlayer.MaxStamina + 10, MyPlayer.MaxArmor, MyPlayer.Level + 1);
+    
+    NextScene();
+});

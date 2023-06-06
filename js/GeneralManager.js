@@ -170,15 +170,15 @@ function UpdateButton(){
         HealButton.disabled = true;
     }else{
         if(MyPlayer.Stamina > 0){
-            if(MyPlayer.Stamina >= 10)
+            if(MyPlayer.Stamina >= (0 - (MyPlayer.CalculateDamage("Light") * 2)))
             {LiAtButton.disabled = false;}
             else{LiAtButton.disabled = true;}
 
-            if(MyPlayer.Stamina >= 15)
+            if(MyPlayer.Stamina >= (0 - (MyPlayer.CalculateDamage("Middle") * 2)))
             {MiAtButton.disabled = false;}
             else{MiAtButton.disabled = true;}
 
-            if(MyPlayer.Stamina >= 25)
+            if(MyPlayer.Stamina >= (0 - (MyPlayer.CalculateDamage("Heavy") * 2)))
             {HeAtButton.disabled = false;}
             else{HeAtButton.disabled = true;}
         }
@@ -214,15 +214,11 @@ function CreateEnemy(){
     ShowHideEl("#winScreen", false, -10);
 }
 
-function LevelPlayer(){
-    MyPlayer = new Person(MyPlayer.Name, MyPlayer.MaxHealth + 10, MyPlayer.MaxStamina, MyPlayer.MaxArmor + 10, MyPlayer.Level + 1);
-}
-
 function NextScene(){
     CreateEnemy();
-    LevelPlayer();
     MyPlayer.ResetStats();
     CurEnemy.ResetStats();
+    ShowHideEl("#levelScreen", false, -10);
     UpdateButton();
     UpdateText();
 }
