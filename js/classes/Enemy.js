@@ -11,7 +11,12 @@ class Enemy extends Person{
         if(this.Health <= (this.MaxHealth / 2) && this.RegenAmount > 0){
             this.ChangeHealth(Math.floor((this.MaxHealth - this.Health) / 2));
         }else{
+        }
+        if(this.Stamina >= (0 - (this.CalculateDamage("Middle") * 2))){
             MyPlayer.ChangeHealth(Math.floor(this.GetDamage("Middle")));
+        }
+        else{
+            this.ChangeStamina(25);
         }
         ShowHideEl("#loadingScreen", false, -10);
     }
