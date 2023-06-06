@@ -46,10 +46,10 @@ body{
     * {
         font-family: 'Inconsolata', monospace;
     }
-    background-color: rgb(109, 103, 86);
-    background-image: url("../../images/wooden-texture.jpg");
-    background-size: cover;
-    background-position: center;
+    background-color: #CDC4BF;
+    // background-image: url("../../images/wooden-texture.jpg");
+    // background-size: cover;
+    // background-position: center;
     display: flex;
     justify-content: space-evenly;
     overflow: hidden;
@@ -93,7 +93,7 @@ body{
                 font-size: 1rem;
                 text-align: center;
                 background-image: none;
-                background-color: #d9d9d9;
+                background-color: #DBD4CE;
                 align-items: flex-start;
                 overflow-y: scroll;
                 overflow-x: clip;
@@ -249,7 +249,7 @@ body{
         justify-content: center;
         > #all-buttons{
             display: flex;
-            background-color: #e2dfd2;
+            background-color: #495F8C;
             justify-content: center;
             width: 50%;
             padding: 1rem;
@@ -278,19 +278,41 @@ body{
     }
     
     button{
-        background-color: #838178;
+        background-color: #DBD4CE;
         border: none;
         margin: .1rem;
         font-weight: 800;
-        color: #535353;
+        color: #494C4E;
         transition: background-color .3s cubic-bezier(0, 0, 0.06, 0.99);
         &:hover{
-            background-color: #71716e;
-            color: #b9b7af;
+            background-color: #a09c99;
+            color: #DBD4CE;
         }
         &:disabled{
-            background-color: #b9b7af;
-            color: #535353;
+            background-color: rgb(151, 148, 146);
+            color: #494C4E;
         }
     }
 }
+
+::-webkit-scrollbar {
+    width: .5rem;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #0000; 
+    border-radius: .5rem;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: .5rem;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+    border-radius: .3rem;
+  }
