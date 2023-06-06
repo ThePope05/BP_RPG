@@ -57,28 +57,41 @@ class Person{
     }
 
     ChangeStamina(points){
-        if(this.Stamina + points < 0){
-            this.Stamina = 0;
+        if(points < 0){
+            if(this.Stamina + points > 0){
+                this.Stamina += points;
+            }
+            else{
+                this.Stamina = 0;
+            }
         }
-        else{
-            this.Stamina += points;
+        else if(points != 0){
+            if(this.Stamina + points > this.MaxStamina){
+                this.Stamina = this.MaxStamina;
+            }
+            else{
+                this.Stamina += points;
+            }
         }
     }
 
     GetDamage(attackType){
         let CritHit = Math.random();
         let MissChange = Math.random();
-        if(MissChange <= .9){
+        if(MissChange <= .85){
             if(CritHit >= 0.80){
                 ConsoleAddMessage(this.Name + " Does critical hit");
-                this.ChangeStamina((0 - (this.CalculateDamage(attackType) * 2)));
+                this.ChangeStamina((this.CalculateDamage(attackType) * 2));
                 return this.CalculateDamage(attackType) + ((this.CalculateDamage(attackType) / 100) * 80);
             }
             else{
+                console.log((this.CalculateDamage(attackType) * 2));
+                this.ChangeStamina((this.CalculateDamage(attackType) * 2));
                 return this.CalculateDamage(attackType);
             }
         }
         else{
+            this.ChangeStamina((this.CalculateDamage(attackType) * 2));
             ConsoleAddMessage(this.Name + " Misses a " + attackType + " attack");
             return 0;
         }

@@ -215,7 +215,7 @@ function CreateEnemy(){
 }
 
 function LevelPlayer(){
-    MyPlayer = new Player(MyPlayer.MaxHealth + 10, MyPlayer.MaxStamina, MyPlayer.MaxArmor + 10, MyPlayer.Level + 1);
+    MyPlayer = new Person(MyPlayer.Name, MyPlayer.MaxHealth + 10, MyPlayer.MaxStamina, MyPlayer.MaxArmor + 10, MyPlayer.Level + 1);
 }
 
 function NextScene(){
