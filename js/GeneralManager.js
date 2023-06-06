@@ -51,7 +51,7 @@ function UpdateText(){
                 row.innerHTML = "<b class='left'> <- </b>";
                 row.innerHTML = row.innerHTML + Text;
             }
-            else if(Text.includes(CurEnemy.Name)){
+            else if(!Text.includes(MyPlayer.Name)){
                 row.innerHTML = Text;
                 row.innerHTML = row.innerHTML + "<b class='right'> -> </b>";
             }
@@ -228,6 +228,7 @@ function NextScene(){
 
 function ResetScene(){
     CurEnemy = FirstEnemy;
+    MyPlayer = MyFirstPlayer;
     MyPlayer.ResetStats();
     CurEnemy.ResetStats();
     UpdateButton();

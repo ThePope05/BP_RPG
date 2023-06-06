@@ -1,4 +1,5 @@
 let MyPlayer = new Person("Simon", 50, 100, 25, 1);
+let MyFirstPlayer = MyPlayer;
 
 let CurEnemy = new Enemy(30, 100, 20, 1);
 let FirstEnemy = CurEnemy;
