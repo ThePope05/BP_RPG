@@ -211,8 +211,15 @@ let allEnemys = [];
 function CreateEnemy(){
     allEnemys[allEnemys.length] = CurEnemy;
     let lastEnemy = allEnemys[allEnemys.length - 1];
-
-    CurEnemy = new Enemy(lastEnemy.MaxHealth + 10, lastEnemy.MaxStamina, lastEnemy.MaxArmor + 10, lastEnemy.Level + 1);
+    let upgradeChange = Math.random();
+    if(upgradeChange >= .66){
+        CurEnemy = new Enemy(lastEnemy.MaxHealth + 10, lastEnemy.MaxStamina, lastEnemy.MaxArmor, lastEnemy.Level + 1);
+    }
+    else if(upgradeChange >= .33){
+        CurEnemy = new Enemy(lastEnemy.MaxHealth, lastEnemy.MaxStamina, lastEnemy.MaxArmor + 10, lastEnemy.Level + 1);
+    }else{
+        CurEnemy = new Enemy(lastEnemy.MaxHealth, lastEnemy.MaxStamina + 10, lastEnemy.MaxArmor, lastEnemy.Level + 1);
+    }
     document.querySelector("#Enemy").classList.remove("Dead");
     ShowHideEl("#winScreen", false, -10);
 }
